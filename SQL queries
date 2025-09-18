@@ -1,0 +1,21 @@
+#The query shows the main fields (Date, conversion, page views) and the calculated field renamed as conversion rate to show the calculation using conversion and page views.
+SELECT 
+    date,
+    conversions,
+    page_views,
+    (conversions / page_views) AS conversion_rate
+FROM WebsiteAnalytics;
+
+#As the table have the revenue calculated and only one record by day, the query shows date and revenue.
+SELECT 
+    date,
+    revenue
+FROM WebsiteAnalytics;
+
+#The query uses revenue and conversión to calculate the average by conversión.
+SELECT 
+    date,
+    revenue,
+    conversions,
+    (revenue /conversions) AS avg_revenue_by_conversion
+FROM WebsiteAnalytics;
